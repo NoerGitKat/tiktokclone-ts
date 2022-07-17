@@ -24,7 +24,7 @@ export default function PostCard({ post }: IPostCardProps) {
               height={62}
               className=" rounded-full"
               src={post.postedBy?.image}
-              alt="user-profile"
+              alt="User Profile"
               layout="responsive"
             />
           </aside>

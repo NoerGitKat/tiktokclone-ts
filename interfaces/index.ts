@@ -28,3 +28,16 @@ export interface IPost {
   }[];
   userId: string;
 }
+
+export interface IDecodedUser {
+  name: string;
+  picture: string;
+  sub: string;
+}
+
+export interface IUser {
+  _id: string;
+  _type: string;
+  userName: string;
+  image: string;
+}
