@@ -7,10 +7,14 @@ import { ImCancelCircle } from 'react-icons/im';
 
 import Discover from './Discover';
 import Footer from './Footer';
+import LoginButton from './LoginButton';
 
 const Sidebar: NextPage = () => {
-  const [isVisible, setIsVisible] = useState<Boolean>(false);
+  const [isVisible, setIsVisible] = useState<Boolean>(true);
   const { pathname } = useRouter();
+
+  // Temp
+  const user = false;
 
   return (
     <section>
@@ -36,6 +40,7 @@ const Sidebar: NextPage = () => {
               </div>
             </Link>
           </div>
+          {!user && <LoginButton />}
           <Discover />
           <Footer />
         </aside>

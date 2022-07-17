@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app';
 import Navbar from '../components/common/Navbar';
-import Sidebar from '../components/common/sidebar/Sidebar';
+import Sidebar from '../components/common/sidebar';
 import { useSSR } from '../hooks';
 import '../styles/globals.css';
 
