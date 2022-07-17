@@ -10,7 +10,7 @@ import Footer from './Footer';
 import LoginButton from './LoginButton';
 
 const Sidebar: NextPage = () => {
-  const [isVisible, setIsVisible] = useState<Boolean>(true);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
   const { pathname } = useRouter();
 
   // Temp
