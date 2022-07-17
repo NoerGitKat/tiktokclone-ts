@@ -7,7 +7,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     case 'GET':
       const query = allPostsQuery();
       const data = await client.fetch(query);
-      console.log('data is', data);
 
       return res.status(200).json(data);
     default:

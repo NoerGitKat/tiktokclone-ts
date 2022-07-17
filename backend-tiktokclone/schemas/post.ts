@@ -18,7 +18,7 @@ export default {
     },
     {
       name: 'userId',
-      title: 'UserId',
+      title: 'User Id',
       type: 'string',
     },
     {
