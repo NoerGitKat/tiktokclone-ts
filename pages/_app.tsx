@@ -1,3 +1,4 @@
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import type { AppProps } from 'next/app';
 import Navbar from '../components/common/Navbar';
 import Sidebar from '../components/common/sidebar';
@@ -10,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   if (isSSR) return null;
 
   return (
-    <div>
+    <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
       <Navbar />
       <div className="flex gap-6 md:gap-20">
         <Sidebar />
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </div>
       </div>
-    </div>
+    </GoogleOAuthProvider>
   );
 }
 

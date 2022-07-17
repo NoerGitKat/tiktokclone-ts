@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoMdAdd } from 'react-icons/io';
+import LoginButton from './LoginButton';
 
 const Navbar = () => {
-  const user = false;
+  const user = true;
 
   return (
     <nav className="w-full flex justify-between items-center border-b-2 border-gray-200 py-3 px-4">
@@ -22,13 +23,16 @@ const Navbar = () => {
 
       <>
         {user ? (
-          <aside className="flex gap-5 md:gap-10">
-            <Link href="/upload">
-              <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
-                <IoMdAdd className="text-xl" /> <span className="hidden md:block">Upload</span>
-              </button>
-            </Link>
-          </aside>
+          <>
+            <aside className="flex gap-5 md:gap-10">
+              <Link href="/upload">
+                <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
+                  <IoMdAdd className="text-xl" /> <span className="hidden md:block">Upload</span>
+                </button>
+              </Link>
+            </aside>
+            <LoginButton />
+          </>
         ) : null}
       </>
     </nav>
