@@ -41,3 +41,9 @@ export interface IUser {
   userName: string;
   image: string;
 }
+
+export enum MediaTypes {
+  MP4 = 'video/mp4',
+  WebM = 'video/webm',
+  Ogg = 'video/ogg',
+}
