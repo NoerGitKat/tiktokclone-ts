@@ -2,8 +2,7 @@ import { CredentialResponse } from '@react-oauth/google';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import { IDecodedUser, IUser } from '../interfaces';
-
-export const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';
+import { BASE_URL } from './constants';
 
 export const createOrGetUser = async (
   response: CredentialResponse,
@@ -20,9 +19,8 @@ export const createOrGetUser = async (
 
   try {
     await axios.post(`${BASE_URL}/auth`, user);
-    console.log('whhat  happens', user);
     addUser(user);
   } catch (error) {
-    console.error('error');
+    console.error('Error! Could not create user', error);
   }
 };

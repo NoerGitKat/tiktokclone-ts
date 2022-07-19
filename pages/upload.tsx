@@ -7,7 +7,16 @@ import { useUpload } from '../hooks';
 export interface IUploadPageProps {}
 
 const UploadPage: NextPage<IUploadPageProps> = (props) => {
-  const { isUploading, uploadVideo, video } = useUpload();
+  const {
+    isUploading,
+    previewVideo,
+    video,
+    caption,
+    setCaption,
+    category,
+    setCategory,
+    uploadVideo,
+  } = useUpload();
 
   return (
     <main className="flex w-full h-full flex-col">
@@ -19,9 +28,18 @@ const UploadPage: NextPage<IUploadPageProps> = (props) => {
         {isUploading ? (
           <FaSpinner className="animate-spin" color="F51997" />
         ) : (
-          <UploadBox uploadVideo={uploadVideo} />
+          <UploadBox previewVideo={previewVideo} />
         )}
-        {video && <VideoPreview video={video} />}
+        {video && (
+          <VideoPreview
+            video={video}
+            caption={caption}
+            setCaption={setCaption}
+            category={category}
+            setCategory={setCategory}
+            uploadVideo={uploadVideo}
+          />
+        )}
       </section>
     </main>
   );

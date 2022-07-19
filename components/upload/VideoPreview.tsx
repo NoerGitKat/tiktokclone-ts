@@ -1,11 +1,24 @@
 import { SanityAssetDocument } from '@sanity/client';
+import { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { topics } from '../../utils/constants';
 
 export interface IVideoPreviewProps {
   video: SanityAssetDocument;
+  caption: string;
+  setCaption: Dispatch<SetStateAction<string>>;
+  category: string;
+  setCategory: Dispatch<SetStateAction<string>>;
+  uploadVideo: () => void;
 }
 
-export default function VideoPreview({ video }: IVideoPreviewProps) {
+export default function VideoPreview({
+  video,
+  caption,
+  setCaption,
+  category,
+  setCategory,
+  uploadVideo,
+}: IVideoPreviewProps) {
   return (
     <article className="w-full md:mx-10">
       <aside className="mb-4 md:w-full">
@@ -20,13 +33,13 @@ export default function VideoPreview({ video }: IVideoPreviewProps) {
         <label className="text-md font-medium">Caption</label>
         <input
           type="text"
-          value=""
-          onChange={() => {}}
+          value={caption}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setCaption(e.target.value)}
           className="rounded outline-none text-md border-2 border-gray-200 p-2"
         />
         <label className="text-md font-medium">Category</label>
         <select
-          onChange={() => {}}
+          onChange={(e: ChangeEvent<HTMLSelectElement>) => setCategory(e.target.value)}
           className="rounded outline-none text-md border-2 border-gray-200 p-2 cursor-pointer"
         >
           {topics.map((topic) => (
@@ -43,9 +56,10 @@ export default function VideoPreview({ video }: IVideoPreviewProps) {
           Discard
         </button>
         <button
-          onClick={() => {}}
+          onClick={uploadVideo}
           type="button"
-          className="text-md text-white font-medium p-2 rounded w-full bg-[#F51997]"
+          disabled={caption.length === 0}
+          className="text-md text-white font-medium p-2 rounded w-full bg-[#F51997] disabled:opacity-50"
         >
           Upload
         </button>

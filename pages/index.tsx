@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import type { NextPage } from 'next';
 import PostCard from '../components/PostCard';
 import { IPost } from '../interfaces';
+import { BASE_URL } from '../utils/constants';
 
 interface IHomeProps {
   posts: IPost[];
@@ -22,8 +23,6 @@ const Home: NextPage<IHomeProps> = ({ posts }) => {
 };
 
 export const getServerSideProps = async () => {
-  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';
-
   try {
     const response: AxiosResponse<IPost[], null> = await axios.get(`${BASE_URL}/posts`);
 

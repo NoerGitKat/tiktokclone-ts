@@ -1,38 +1,41 @@
 import { BsCode, BsEmojiSunglasses } from 'react-icons/bs';
+import { FaGamepad, FaMedal, FaPaw } from 'react-icons/fa';
 import { GiCakeSlice, GiGalaxy, GiLipstick } from 'react-icons/gi';
-import { FaPaw, FaMedal, FaGamepad } from 'react-icons/fa';
+import { ITopic } from '../interfaces';
 
-export const topics = [
+export const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3000/api';
+
+export const topics: ITopic[] = [
   {
-    name: 'development',
+    name: 'Development',
     icon: <BsCode />,
   },
   {
-    name: 'comedy',
+    name: 'Comedy',
     icon: <BsEmojiSunglasses />,
   },
   {
-    name: 'gaming',
+    name: 'Gaming',
     icon: <FaGamepad />,
   },
   {
-    name: 'food',
+    name: 'Food',
     icon: <GiCakeSlice />,
   },
   {
-    name: 'dance',
+    name: 'Dance',
     icon: <GiGalaxy />,
   },
   {
-    name: 'beauty',
+    name: 'Beauty',
     icon: <GiLipstick />,
   },
   {
-    name: 'animals',
+    name: 'Animals',
     icon: <FaPaw />,
   },
   {
-    name: 'sports',
+    name: 'Sports',
     icon: <FaMedal />,
   },
 ];

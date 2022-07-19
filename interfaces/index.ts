@@ -47,3 +47,37 @@ export enum MediaTypes {
   WebM = 'video/webm',
   Ogg = 'video/ogg',
 }
+
+export enum Topics {
+  development = 'Development',
+  comedy = 'Comedy',
+  gaming = 'Gaming',
+  food = 'Food',
+  dance = 'Dance',
+  beauty = 'Beauty',
+  animals = 'Animals',
+  sports = 'Sports',
+}
+
+export interface ITopic {
+  name: string;
+  icon: JSX.Element;
+}
+
+export interface INewPost {
+  _type: string;
+  caption: string;
+  topic: string;
+  video: {
+    _type: string;
+    asset: {
+      _type: string;
+      _ref: string;
+    };
+  };
+  userId: string;
+  postedBy: {
+    _type: string;
+    _ref: string;
+  };
+}

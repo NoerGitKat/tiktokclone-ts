@@ -6,7 +6,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     case 'POST':
       const user = req.body;
 
-      await client.createIfNotExists(user);
+      try {
+        await client.createIfNotExists(user);
+      } catch (error) {
+        console.error('Error! Could not create new user', error);
+      }
 
       return res.status(200).json('Logged in successfully!');
     default:
