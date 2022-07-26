@@ -15,12 +15,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
     case 'POST':
-      // TODO: Implement new post upload
       const newPost: INewPost = req.body;
 
       try {
         const data = await client.create(newPost);
-        res.status(201).json(data);
+        return res.status(201).json(data);
       } catch (error) {
         return res.status(409).json(error);
       }

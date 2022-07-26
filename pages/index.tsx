@@ -10,15 +10,13 @@ interface IHomeProps {
 
 const Home: NextPage<IHomeProps> = ({ posts }) => {
   return (
-    <main className="">
-      <section>
-        <ul>
-          {posts.map((post) => (
-            <PostCard key={post._id} post={post} />
-          ))}
-        </ul>
-      </section>
-    </main>
+    <section>
+      <ul>
+        {posts.map((post) => (
+          <PostCard key={post._id} post={post} />
+        ))}
+      </ul>
+    </section>
   );
 };
 

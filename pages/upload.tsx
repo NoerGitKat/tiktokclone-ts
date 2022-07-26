@@ -19,7 +19,7 @@ const UploadPage: NextPage<IUploadPageProps> = (props) => {
   } = useUpload();
 
   return (
-    <main className="flex w-full h-full flex-col">
+    <section className="flex w-full h-full flex-col">
       <header className="bg-white rounded-lg">
         <h1 className="text-2xl font-bold">Upload Video</h1>
         <h3 className="text-md text-gray-400">Post a video to your account</h3>
@@ -41,7 +41,7 @@ const UploadPage: NextPage<IUploadPageProps> = (props) => {
           />
         )}
       </section>
-    </main>
+    </section>
   );
 };
 

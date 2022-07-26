@@ -30,7 +30,7 @@ export default function PostCard({ post }: IPostCardProps) {
           </aside>
         </Link>
         <aside>
-          <Link href="/">
+          <Link href={`/posts/${post._id}`}>
             <aside className="flex items-center gap-2">
               <h3 className="flex gap-2 items-center md:text-md font-bold text-primary">
                 {post.postedBy.userName} <GoVerified className="text-blue-400" />
