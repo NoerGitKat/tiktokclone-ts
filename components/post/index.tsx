@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { BsFillPauseFill, BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { HiVolumeOff, HiVolumeUp } from 'react-icons/hi';
-import { useVideo } from '../hooks';
-import { IPost } from '../interfaces';
+import { useVideo } from '../../hooks';
+import { IPost } from '../../interfaces';
 
 export interface IPostCardProps {
   post: IPost;

@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import type { NextPage } from 'next';
-import PostCard from '../components/PostCard';
+import PostCard from '../components/post';
 import { IPost } from '../interfaces';
 import { BASE_URL } from '../utils/constants';
 

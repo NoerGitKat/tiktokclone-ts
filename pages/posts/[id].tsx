@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { GetServerSidePropsContext } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { MdOutlineCancel } from 'react-icons/md';
-import { usePostDetails } from '../../hooks';
+import { usePostDetails, useVideo } from '../../hooks';
 import { IPost } from '../../interfaces';
 import { BASE_URL } from '../../utils/constants';
 
@@ -13,7 +15,8 @@ export interface IPostDetailPageProps {
 }
 
 export default function PostDetailPage({ post }: IPostDetailPageProps) {
-  const { currentPost, postRef } = usePostDetails(post);
+  const { currentPost } = usePostDetails(post);
+  const { videoRef, togglePlay, isPlaying } = useVideo();
   const { back } = useRouter();
 
   if (!currentPost) return <section>No post found!</section>;
@@ -31,20 +34,20 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
         <aside className="relative">
           <div className="lg:h-[100vh] h-[60vh]">
             <video
-              ref={postRef}
-              onClick={() => {}}
+              ref={videoRef}
+              onClick={togglePlay}
               loop
               src={currentPost?.video?.asset.url}
               className=" h-full cursor-pointer"
             />
           </div>
 
-          <div className="absolute top-[45%] left-[40%] cursor-pointer">
-            {/* {!isPlaying && (
-              <button onClick={onVideoClick}>
+          <div className="absolute top-[45%] left-[45%] cursor-pointer">
+            {!isPlaying && (
+              <button onClick={togglePlay}>
                 <BsFillPlayFill className="text-white text-6xl lg:text-8xl" />
               </button>
-            )} */}
+            )}
           </div>
         </aside>
         <aside className="absolute bottom-5 lg:bottom-10 right-5 lg:right-10  cursor-pointer">
@@ -59,29 +62,29 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
           )} */}
         </aside>
       </article>
-      <article className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
-        <aside className="lg:mt-20 mt-10">
+      <article className="relative ml-4 w-[1000px] md:w-[900px] lg:w-[700px]">
+        <aside className="flex gap-4 mb-4 lg:mt-10 mt-5">
           <Link
             className="flex gap-4 mb-4 bg-white w-full pl-10 cursor-pointer"
             href={`/profile/${currentPost.postedBy._id}`}
           >
             <>
-              {/* <Image
+              <Image
                 width={60}
                 height={60}
                 alt="user-profile"
                 className="rounded-full"
                 src={currentPost.postedBy.image}
-              /> */}
+              />
               <h1 className="text-xl font-bold lowercase tracking-wider flex gap-2 items-center justify-center">
                 {currentPost.postedBy.userName.replace(/\s+/g, '')}{' '}
                 <GoVerified className="text-blue-400 text-xl" />
               </h1>
-              <h2 className="text-md"> {currentPost.postedBy.userName}</h2>
             </>
           </Link>
-
-          <h4 className="px-10 text-md text-gray-600">{currentPost.caption}</h4>
+        </aside>
+        <aside>
+          <h4 className="text-md text-gray-600">{currentPost.caption}</h4>
           {/* {userProfile && (
               <LikeButton
                 className="mt-10 px-10"
