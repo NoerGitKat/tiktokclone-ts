@@ -13,11 +13,8 @@ export interface IPost {
     image: string;
   };
   likes: {
-    postedBy: {
-      _id: string;
-      userName: string;
-      image: string;
-    };
+    _ref: string;
+    _key: string;
   }[];
   comments: {
     comment: string;
@@ -80,4 +77,8 @@ export interface INewPost {
     _type: string;
     _ref: string;
   };
+  likes: {
+    _ref: string;
+    _key: string;
+  }[];
 }

@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { IPost } from '../interfaces';
 
 const usePostDetails = (post: IPost) => {
   const [currentPost, setCurrentPost] = useState(post);
 
-  useEffect(() => {}, []);
+  const updateLikesInPost = (newLikes) => {
+    console.log('likes is', newLikes);
+    setCurrentPost((prevState) => ({ ...prevState, likes: newLikes }));
+  };
 
-  return { currentPost };
+  return { currentPost, updateLikesInPost };
 };
 
 export default usePostDetails;

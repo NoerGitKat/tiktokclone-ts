@@ -14,6 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       return res.status(200).json('Logged in successfully!');
     default:
-      return res.status(404).json('It no work...');
+      return res.status(500).json('It no work...');
   }
 }

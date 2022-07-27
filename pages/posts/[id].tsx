@@ -6,8 +6,10 @@ import { useRouter } from 'next/router';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { MdOutlineCancel } from 'react-icons/md';
+import LikeButton from '../../components/post/LikeButton';
 import { usePostDetails, useVideo } from '../../hooks';
 import { IPost } from '../../interfaces';
+import useAuthStore from '../../store/useStore';
 import { BASE_URL } from '../../utils/constants';
 
 export interface IPostDetailPageProps {
@@ -15,7 +17,8 @@ export interface IPostDetailPageProps {
 }
 
 export default function PostDetailPage({ post }: IPostDetailPageProps) {
-  const { currentPost } = usePostDetails(post);
+  const { userProfile } = useAuthStore();
+  const { currentPost, updateLikesInPost } = usePostDetails(post);
   const { videoRef, togglePlay, isPlaying } = useVideo();
   const { back } = useRouter();
 
@@ -85,15 +88,14 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
         </aside>
         <aside>
           <h4 className="text-md text-gray-600">{currentPost.caption}</h4>
-          {/* {userProfile && (
-              <LikeButton
-                className="mt-10 px-10"
-                likes={currentPost.likes}
-                flex="flex"
-                handleLike={() => handleLike(true)}
-                handleDislike={() => handleLike(false)}
-              />
-            )} */}
+          {userProfile && (
+            <LikeButton
+              postId={currentPost._id}
+              userId={userProfile._id}
+              updateLikesInPost={updateLikesInPost}
+              currentPost={currentPost}
+            />
+          )}
           {/* <Comments
             comment={comment}
             setComment={setComment}

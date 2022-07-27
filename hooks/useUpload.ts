@@ -51,6 +51,7 @@ const useUpload = () => {
           _type: 'postedBy',
           _ref: userProfile._id,
         },
+        likes: [],
       };
 
       try {

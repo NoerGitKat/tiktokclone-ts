@@ -18,6 +18,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
     default:
-      return res.status(404).json('It no work...');
+      return res.status(500).json('It no work...');
   }
 }
