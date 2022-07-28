@@ -16,6 +16,7 @@ const UploadPage: NextPage<IUploadPageProps> = (props) => {
     category,
     setCategory,
     uploadVideo,
+    discardVideo,
   } = useUpload();
 
   return (
@@ -38,6 +39,7 @@ const UploadPage: NextPage<IUploadPageProps> = (props) => {
             category={category}
             setCategory={setCategory}
             uploadVideo={uploadVideo}
+            discardVideo={discardVideo}
           />
         )}
       </section>

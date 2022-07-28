@@ -9,6 +9,7 @@ export interface IVideoPreviewProps {
   category: string;
   setCategory: Dispatch<SetStateAction<string>>;
   uploadVideo: () => void;
+  discardVideo: () => void;
 }
 
 export default function VideoPreview({
@@ -18,6 +19,7 @@ export default function VideoPreview({
   category,
   setCategory,
   uploadVideo,
+  discardVideo,
 }: IVideoPreviewProps) {
   return (
     <article className="w-full md:mx-10">
@@ -49,7 +51,7 @@ export default function VideoPreview({
       </aside>
       <aside className="flex gap-5 mt-7">
         <button
-          onClick={() => {}}
+          onClick={discardVideo}
           type="button"
           className="border-2 border-gray-200 text-md font-medium p-2 rounded w-full"
         >

@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import type { NextPage } from 'next';
+import { MdOutlineVideocamOff } from 'react-icons/md';
+import EmptyState from '../components/common/EmptyState';
 import PostCard from '../components/post';
 import { IPost } from '../interfaces';
 import { BASE_URL } from '../utils/constants';
@@ -11,11 +13,15 @@ interface IHomeProps {
 const Home: NextPage<IHomeProps> = ({ posts }) => {
   return (
     <section>
-      <ul>
-        {posts.map((post) => (
-          <PostCard key={post._id} post={post} />
-        ))}
-      </ul>
+      {posts.length > 0 ? (
+        <ul>
+          {posts.map((post) => (
+            <PostCard key={post._id} post={post} />
+          ))}
+        </ul>
+      ) : (
+        <EmptyState icon={<MdOutlineVideocamOff />} text="No posts yet!" />
+      )}
     </section>
   );
 };

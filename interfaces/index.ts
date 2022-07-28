@@ -1,3 +1,11 @@
+export interface IComment {
+  comment: string;
+  _key: string;
+  postedBy: {
+    _ref: string;
+  };
+}
+
 export interface IPost {
   caption: string;
   video: {
@@ -16,13 +24,7 @@ export interface IPost {
     _ref: string;
     _key: string;
   }[];
-  comments: {
-    comment: string;
-    _key: string;
-    postedBy: {
-      _ref: string;
-    };
-  }[];
+  comments: IComment[];
   userId: string;
 }
 
@@ -81,4 +83,5 @@ export interface INewPost {
     _ref: string;
     _key: string;
   }[];
+  comments: IComment[];
 }

@@ -33,6 +33,8 @@ const useUpload = () => {
     setIsUploading(false);
   };
 
+  const discardVideo = () => setVideo(undefined);
+
   const uploadVideo = async () => {
     if (caption.length !== 0 && video?._id && category && userProfile) {
       const newPost: INewPost = {
@@ -52,6 +54,7 @@ const useUpload = () => {
           _ref: userProfile._id,
         },
         likes: [],
+        comments: [],
       };
 
       try {
@@ -73,6 +76,7 @@ const useUpload = () => {
     category,
     setCategory,
     uploadVideo,
+    discardVideo,
   };
 };
 

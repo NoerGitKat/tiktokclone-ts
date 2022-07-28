@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
 import { MdOutlineCancel } from 'react-icons/md';
+import Comments from '../../components/post/comments';
 import LikeButton from '../../components/post/LikeButton';
 import { usePostDetails, useVideo } from '../../hooks';
 import { IPost } from '../../interfaces';
@@ -65,8 +66,8 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
           )} */}
         </aside>
       </article>
-      <article className="relative ml-4 w-[1000px] md:w-[900px] lg:w-[700px]">
-        <aside className="flex gap-4 mb-4 lg:mt-10 mt-5">
+      <article className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
+        <aside className="flex gap-4 ml-4 mb-4 lg:mt-10 mt-5">
           <Link
             className="flex gap-4 mb-4 bg-white w-full pl-10 cursor-pointer"
             href={`/profile/${currentPost.postedBy._id}`}
@@ -87,7 +88,7 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
           </Link>
         </aside>
         <aside>
-          <h4 className="text-md text-gray-600">{currentPost.caption}</h4>
+          <h4 className="ml-4 text-md text-gray-600">{currentPost.caption}</h4>
           {userProfile && (
             <LikeButton
               postId={currentPost._id}
@@ -96,13 +97,7 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
               currentPost={currentPost}
             />
           )}
-          {/* <Comments
-            comment={comment}
-            setComment={setComment}
-            addComment={addComment}
-            comments={currentPost.comments}
-            isPostingComment={isPostingComment}
-          /> */}
+          <Comments comments={currentPost.comments} />
         </aside>
       </article>
     </section>
