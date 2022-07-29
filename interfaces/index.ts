@@ -2,6 +2,7 @@ export interface IComment {
   comment: string;
   _key: string;
   postedBy: {
+    _id: string;
     _ref: string;
   };
 }

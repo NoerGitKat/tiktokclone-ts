@@ -19,7 +19,7 @@ export interface IPostDetailPageProps {
 }
 
 export default function PostDetailPage({ post }: IPostDetailPageProps) {
-  const { userProfile } = useAuthStore();
+  const { userProfile, allUsers } = useAuthStore();
   const { currentPost, updateLikesInPost, updatePost } = usePostDetails(post);
   const { videoRef, togglePlay, isPlaying } = useVideo();
   const { back } = useRouter();
@@ -55,19 +55,8 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
             )}
           </div>
         </aside>
-        <aside className="absolute bottom-5 lg:bottom-10 right-5 lg:right-10  cursor-pointer">
-          {/* {isVideoMuted ? (
-            <button onClick={() => setIsVideoMuted(false)}>
-              <HiVolumeOff className="text-white text-3xl lg:text-4xl" />
-            </button>
-          ) : (
-            <button onClick={() => setIsVideoMuted(true)}>
-              <HiVolumeUp className="text-white text-3xl lg:text-4xl" />
-            </button>
-          )} */}
-        </aside>
       </article>
-      <article className="relative w-[1000px] md:w-[900px] lg:w-[700px]">
+      <article className="relative min-w-[320px]">
         <aside className="flex gap-4 ml-4 mb-4 lg:mt-10 mt-5">
           <Link
             className="flex gap-4 mb-4 bg-white w-full pl-10 cursor-pointer"
@@ -104,6 +93,7 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
               userId={userProfile._id}
               comments={currentPost.comments}
               updatePost={updatePost}
+              allUsers={allUsers || []}
             />
           )}
         </aside>

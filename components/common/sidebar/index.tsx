@@ -7,6 +7,7 @@ import { ImCancelCircle } from 'react-icons/im';
 
 import Discover from './Discover';
 import Footer from './Footer';
+import SuggestedAccounts from './SuggestedAccounts';
 
 const Sidebar: NextPage = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -40,6 +41,7 @@ const Sidebar: NextPage = () => {
             </Link>
           </div>
           <Discover />
+          <SuggestedAccounts />
           <Footer />
         </aside>
       )}
