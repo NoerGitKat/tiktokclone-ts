@@ -8,7 +8,7 @@ const useLike = (currentPost: IPost, userId: string) => {
 
   const isAlreadyLiked = useMemo(
     () => currentPost.likes.some((like) => like._ref === userId),
-    [currentPost],
+    [currentPost, userId],
   );
 
   const toggleLike = async (

@@ -1,5 +1,6 @@
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import Navbar from '../components/common/Navbar';
 import Sidebar from '../components/common/sidebar';
 import { useSSR } from '../hooks';
@@ -12,6 +13,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ''}>
+      <Head>
+        <title>TikTok Clone</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Navbar />
       <main className="flex gap-6 md:gap-20">
         <Sidebar />

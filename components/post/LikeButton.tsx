@@ -20,9 +20,9 @@ export default function LikeButton({
   console.log('currentPost', currentPost);
 
   return (
-    <aside className="flex mt-4 flex-col justify-center items-center cursor-pointer">
+    <aside className="flex mt-4 flex-col justify-center items-center">
       <button
-        className={`bg-primary rounded-full p-2 md:p-4${
+        className={`cursor-pointer bg-primary rounded-full p-2 md:p-4${
           isAlreadyLiked ? ' text-[#F51997] bg-slate-600' : ''
         }`}
         onClick={() => toggleLike(userId, postId, updateLikesInPost)}

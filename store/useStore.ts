@@ -8,7 +8,7 @@ interface IAuthStore {
   removeUser: () => void;
 }
 
-const store = (set: any): IAuthStore => ({
+const store = (set: (arg0: { userProfile: IUser | null }) => void): IAuthStore => ({
   userProfile: null,
   addUser: (user: IUser) => set({ userProfile: user }),
   removeUser: () => set({ userProfile: null }),

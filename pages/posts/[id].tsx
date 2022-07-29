@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BsFillPlayFill } from 'react-icons/bs';
 import { GoVerified } from 'react-icons/go';
-import { MdOutlineCancel } from 'react-icons/md';
+import { MdOutlineCancel, MdOutlineVideocamOff } from 'react-icons/md';
+import EmptyState from '../../components/common/EmptyState';
 import Comments from '../../components/post/comments';
 import LikeButton from '../../components/post/LikeButton';
 import { usePostDetails, useVideo } from '../../hooks';
@@ -19,11 +20,11 @@ export interface IPostDetailPageProps {
 
 export default function PostDetailPage({ post }: IPostDetailPageProps) {
   const { userProfile } = useAuthStore();
-  const { currentPost, updateLikesInPost } = usePostDetails(post);
+  const { currentPost, updateLikesInPost, updatePost } = usePostDetails(post);
   const { videoRef, togglePlay, isPlaying } = useVideo();
   const { back } = useRouter();
 
-  if (!currentPost) return <section>No post found!</section>;
+  if (!currentPost) return <EmptyState icon={<MdOutlineVideocamOff />} text="No post found!" />;
 
   return (
     <section className="flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap">
@@ -97,7 +98,14 @@ export default function PostDetailPage({ post }: IPostDetailPageProps) {
               currentPost={currentPost}
             />
           )}
-          <Comments comments={currentPost.comments} />
+          {userProfile && (
+            <Comments
+              post={currentPost}
+              userId={userProfile._id}
+              comments={currentPost.comments}
+              updatePost={updatePost}
+            />
+          )}
         </aside>
       </article>
     </section>
