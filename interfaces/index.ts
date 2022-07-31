@@ -29,6 +29,12 @@ export interface IPost {
   userId: string;
 }
 
+export interface IProfile {
+  user: IUser;
+  userVideos: IPost;
+  userLikedVideos: IPost;
+}
+
 export interface IDecodedUser {
   name: string;
   picture: string;

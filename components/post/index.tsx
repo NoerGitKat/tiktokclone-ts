@@ -15,7 +15,7 @@ export default function PostCard({ post }: IPostCardProps) {
     useVideo();
 
   return (
-    <li className="flex flex-col border-b-2 border-gray-200 pb-6">
+    <li className="flex flex-col border-b-2 border-gray-200 pb-6 mb-4">
       <article className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
         <Link href={`/profile/${post.postedBy?._id}`}>
           <aside className="md:w-16 md:h-16 w-10 h-10">
@@ -29,6 +29,7 @@ export default function PostCard({ post }: IPostCardProps) {
             />
           </aside>
         </Link>
+
         <aside>
           <Link href={`/posts/${post._id}`}>
             <aside className="flex items-center gap-2">
@@ -40,6 +41,7 @@ export default function PostCard({ post }: IPostCardProps) {
               </h4>
             </aside>
           </Link>
+
           <article className="lg:ml-20 flex gap-4 relative">
             <aside
               onMouseEnter={toggleHover}
