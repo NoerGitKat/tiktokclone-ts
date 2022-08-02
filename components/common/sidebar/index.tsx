@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
 import { ImCancelCircle } from 'react-icons/im';
+import { useUsers } from '../../../hooks';
 
 import Discover from './Discover';
 import Footer from './Footer';
@@ -11,6 +12,7 @@ import SuggestedAccounts from './SuggestedAccounts';
 
 const Sidebar: NextPage = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
+  const { allUsers } = useUsers();
   const { pathname } = useRouter();
 
   // Temp
@@ -41,7 +43,7 @@ const Sidebar: NextPage = () => {
             </Link>
           </div>
           <Discover />
-          <SuggestedAccounts />
+          {allUsers && <SuggestedAccounts accounts={allUsers} />}
           <Footer />
         </aside>
       )}

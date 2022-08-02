@@ -21,7 +21,7 @@ export default function Comments({
 }: ICommentsProps) {
   return (
     <section className="border-y-2 border-gray-200 mt-4 pt-4 px-10 bg-[#F8F8F8] lg:pb-0 pb-[100px] overflow-scroll lg:h-[475px]">
-      {comments.length > 0 ? (
+      {comments && comments.length > 0 ? (
         <ul>
           {comments.map((comment) => {
             const foundUser = allUsers.find(

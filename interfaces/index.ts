@@ -31,8 +31,8 @@ export interface IPost {
 
 export interface IProfile {
   user: IUser;
-  userVideos: IPost;
-  userLikedVideos: IPost;
+  userVideos: IPost[];
+  userLikedVideos: IPost[];
 }
 
 export interface IDecodedUser {

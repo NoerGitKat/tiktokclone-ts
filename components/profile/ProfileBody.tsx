@@ -11,26 +11,26 @@ export interface IProfileBodyProps {
 export default function ProfileBody({ user, userVideos, userLikedVideos }: IProfileBodyProps) {
   const { showUserVideos, setShowUserVideos } = useProfile(user);
 
-  const buttons = ['Videos', 'Liked'];
-
   return (
     <section className="">
       <article>
         <ul className="flex gap-4 mb-4">
           <li onClick={() => setShowUserVideos(true)}>
             <button
-              className={` ${showUserVideos ? 'border-b-2 border-black' : 'text-gray-400'}`}
+              className={`${
+                showUserVideos ? 'border-b-2 border-black text-black' : 'text-gray-400'
+              }`}
               type="button"
             >
-              Own Videos
+              Videos
             </button>
           </li>
           <li onClick={() => setShowUserVideos(false)}>
             <button
-              className={` ${!showUserVideos ? 'border-b-2 border-black' : 'text-gray-400'} `}
+              className={`${showUserVideos ? 'text-gray-400' : 'border-b-2 border-black'} `}
               type="button"
             >
-              Liked Videos
+              Liked
             </button>
           </li>
         </ul>

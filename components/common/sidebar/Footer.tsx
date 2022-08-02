@@ -18,7 +18,7 @@ const Footer: NextPage = () => {
       {lists.map((list, index) => (
         <FooterList key={`List${index}`} items={list} mt={index !== 0} />
       ))}
-      <h4 className="text-gray-400 text-sm mt-5">© 2022 TikTik</h4>
+      <h4 className="text-gray-400 text-sm mt-5">© 2022 TikTokClone</h4>
     </footer>
   );
 };

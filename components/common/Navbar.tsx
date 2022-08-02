@@ -5,6 +5,7 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { IoMdAdd } from 'react-icons/io';
 import useAuthStore from '../../store/useStore';
 import LoginButton from './LoginButton';
+import SearchBar from './searchbar';
 
 const Navbar = () => {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -17,17 +18,19 @@ const Navbar = () => {
   return (
     <nav className="w-full flex justify-between items-center border-b-2 border-gray-200 py-3 px-4">
       <Link href="/">
-        <aside className="w-[100px] md:w-[129px] md:h-[30px] h-[38px]">
+        <aside className="w-[100px]">
           <Image
             className="cursor-pointer"
-            src={'/tiktik-logo.png'}
+            src={'/tiktok-logo.png'}
             alt="logo"
             layout="responsive"
-            width={100}
-            height={25}
+            width={'100%'}
+            height={35}
           />
         </aside>
       </Link>
+
+      <SearchBar />
 
       <>
         {!userProfile ? (

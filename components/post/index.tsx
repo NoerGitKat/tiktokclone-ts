@@ -42,7 +42,7 @@ export default function PostCard({ post }: IPostCardProps) {
             </aside>
           </Link>
 
-          <article className="lg:ml-20 flex gap-4 relative">
+          <article className="mb-4 lg:flex gap-4 relative">
             <aside
               onMouseEnter={toggleHover}
               onMouseLeave={toggleHover}
@@ -75,6 +75,7 @@ export default function PostCard({ post }: IPostCardProps) {
               )}
             </aside>
           </article>
+          <p className="text-md text-gray-800 cursor-pointer w-210">{post.caption}</p>
         </aside>
       </article>
     </li>
