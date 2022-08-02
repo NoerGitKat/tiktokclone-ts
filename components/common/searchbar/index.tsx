@@ -4,8 +4,9 @@ export interface ISearchBarProps {}
 
 export default function SearchBar(props: ISearchBarProps) {
   const { searchValue, updateSearchValue, search } = useSearch();
+
   return (
-    <form onSubmit={search}>
+    <form className="hidden md:block" onSubmit={search}>
       <input
         type="search"
         value={searchValue}

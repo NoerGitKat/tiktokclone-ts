@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { IPost } from '../interfaces';
 import useAuthStore from '../store/useStore';
 
-const useSearch = (results: IPost[]) => {
+const useSearch = (results?: IPost[]) => {
   const [searchValue, setSearchValue] = useState('');
   const [showAccounts, setShowAccounts] = useState(true);
   const { allUsers } = useAuthStore();

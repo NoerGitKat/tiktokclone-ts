@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex justify-between items-center border-b-2 border-gray-200 py-3 px-4">
       <Link href="/">
-        <aside className="w-[100px]">
+        <aside className="w-[120px]">
           <Image
             className="cursor-pointer"
             src={'/tiktok-logo.png'}
