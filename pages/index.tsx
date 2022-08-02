@@ -11,9 +11,10 @@ interface IHomeProps {
 }
 
 const Home: NextPage<IHomeProps> = ({ posts }) => {
+  console.log('posts', posts);
   return (
     <section>
-      {posts.length > 0 ? (
+      {posts && posts.length > 0 ? (
         <ul>
           {posts.map((post) => (
             <PostCard key={post._id} post={post} />
@@ -26,9 +27,15 @@ const Home: NextPage<IHomeProps> = ({ posts }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
+  console.log('topic is', topic);
+
   try {
-    const response: AxiosResponse<IPost[], null> = await axios.get(`${BASE_URL}/posts`);
+    const response: AxiosResponse<IPost[], null> = await axios.get(
+      topic ? `${BASE_URL}/discover/${topic}` : `${BASE_URL}/posts`,
+    );
+
+    console.log('response is', response);
 
     return {
       props: { posts: response.data },
