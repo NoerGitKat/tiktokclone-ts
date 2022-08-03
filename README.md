@@ -1,23 +1,6 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 
 <!-- PROJECT LOGO -->
-<br />
 <section align="center">
   <a href="https://tiktokclone-ts.vercel.app/">
     <img src="public/tiktok-logo.png" alt="Logo" width="150" height="50">
@@ -36,26 +19,6 @@
 <br>
     
 ![Product Name Screen Shot][homepage-screenshot]
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 
@@ -113,9 +76,7 @@ _Follow the steps to setup the project locally_
 
 ## Contact
 
-Noer Paanakker - [LinkedIn](https://www.linkedin.com/in/noer-paanakker-731284a1/) - noer@lightworksweb.nl
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Noer Paanakker - [LinkedIn](https://www.linkedin.com/in/noer-paanakker-731284a1/) - <a href="mailto:noer@lightworksweb.nl">noer@lightworksweb.nl</a>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
