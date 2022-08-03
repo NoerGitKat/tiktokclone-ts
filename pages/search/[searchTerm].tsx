@@ -16,9 +16,6 @@ export default function SearchTermPage({ posts }: ISearchTermPageProps) {
   const { showAccounts, setShowAccounts, foundAccounts } = useSearch(posts);
   const { query } = useRouter();
 
-  console.log('foundAccounts', foundAccounts);
-  console.log('posts', posts);
-
   return (
     <section>
       <h1 className="text-2xl">Search Results</h1>

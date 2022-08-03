@@ -28,7 +28,7 @@ export default function Comments({
               (user) => user._id === comment.postedBy._id || user._id === comment.postedBy._ref,
             );
 
-            return <Comment key={comment._key} comment={comment} user={foundUser} />;
+            return foundUser && <Comment key={comment._key} comment={comment} user={foundUser} />;
           })}
         </ul>
       ) : (

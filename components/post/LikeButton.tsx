@@ -17,8 +17,6 @@ export default function LikeButton({
 }: ILikeButtonProps) {
   const { isAlreadyLiked, toggleLike } = useLike(currentPost, userId);
 
-  console.log('currentPost', currentPost);
-
   return (
     <aside className="flex mt-4 flex-col justify-center items-center">
       <button

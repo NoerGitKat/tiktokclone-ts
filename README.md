@@ -1,34 +1,133 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-## Getting Started
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
 
-First, run the development server:
+<!-- PROJECT LOGO -->
+<br />
+<section align="center">
+  <a href="#">
+    <img src="public/tiktok-logo.png" alt="Logo" width="150" height="50">
+  </a>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+  <h3 align="center">TikTok Clone</h3>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+  <article align="center">
+    A simplified version of the popular <a href="https://www.tiktok.com/" target="_blank">TikTok social media application</a>
+    <br>
+    <br>
+    <a href="#">👉 View Demo 👈</a>
+  </article>
+</section>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br>
+    
+![Product Name Screen Shot][homepage-screenshot]
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+  </ol>
+</details>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<!-- ABOUT THE PROJECT -->
 
-## Learn More
+## About The Project
 
-To learn more about Next.js, take a look at the following resources:
+This TikTok clone is an exercise in building a social media application, built in Next.js with the headless CMS Sanity as a backend.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Main Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+☑️ Google OAuth
+<br>
+☑️ Upload Videos
+<br>
+☑️ Comment on Posts
 
-## Deploy on Vercel
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[![Next][next.js]][next-url]
+[![React][react.js]][react-url]
+[![Typescript][typescript]][typescript-url]
+[![Sanity][sanity]][sanity-url]
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Installation
+
+_Follow the steps to setup the project locally_
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/NoerGitKat/tiktokclone-ts
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   cd backend-tiktokclone && npm install
+   ```
+3. Enter API keys in `.env.development`
+   ```md
+   NEXT_PUBLIC_API_BASE_URL=
+   NEXT_PUBLIC_SANITY_TOKEN=
+   NEXT_PUBLIC_SANITY_PROJECT_ID=
+   NEXT_PUBLIC_GOOGLE_CLIENT_ID=
+   ```
+4. Start project
+   ```sh
+   npm run dev
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Noer Paanakker - [LinkedIn](https://www.linkedin.com/in/noer-paanakker-731284a1/) - noer@lightworksweb.nl
+
+Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[homepage-screenshot]: public/homepage.png
+[next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[next-url]: https://nextjs.org/
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[typescript]: https://img.shields.io/badge/typescript-B0397A?style=for-the-badge&logo=typescript&logoColor=61DAFB
+[typescript-url]: https://www.typescriptlang.org/
+[sanity]: https://img.shields.io/badge/sanity-2D432A?style=for-the-badge&logo=cms&logoColor=61DAFB
+[sanity-url]: https://www.sanity.io/

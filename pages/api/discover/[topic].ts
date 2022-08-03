@@ -12,8 +12,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       try {
         const posts: IPost[] | undefined | '' = query && (await client.fetch(query));
 
-        console.log('posts here', posts);
-
         if (!posts) return res.status(404).json('Could not find anything!');
 
         return res.status(200).json(posts);

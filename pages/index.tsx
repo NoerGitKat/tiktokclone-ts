@@ -11,7 +11,6 @@ interface IHomeProps {
 }
 
 const Home: NextPage<IHomeProps> = ({ posts }) => {
-  console.log('posts', posts);
   return (
     <section>
       {posts && posts.length > 0 ? (
@@ -28,14 +27,10 @@ const Home: NextPage<IHomeProps> = ({ posts }) => {
 };
 
 export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
-  console.log('topic is', topic);
-
   try {
     const response: AxiosResponse<IPost[], null> = await axios.get(
       topic ? `${BASE_URL}/discover/${topic}` : `${BASE_URL}/posts`,
     );
-
-    console.log('response is', response);
 
     return {
       props: { posts: response.data },
