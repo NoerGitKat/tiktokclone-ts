@@ -12,11 +12,9 @@ interface IAuthStore {
   fetchAllUsers: () => void;
 }
 
-interface ISetDispatcher {
-  set: (arg0: { userProfile?: IUser | null; allUsers?: IUser[] }) => void;
-}
-
-const store = (set: ISetDispatcher): IAuthStore => ({
+const store = (
+  set: (arg0: { userProfile?: IUser | null; allUsers?: IUser[] }) => void,
+): IAuthStore => ({
   userProfile: null,
   allUsers: [],
   addUser: (user: IUser) => set({ userProfile: user }),

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { IPost } from '../interfaces';
+import { ILike, IPost } from '../interfaces';
 
 const usePostDetails = (post: IPost) => {
   const [currentPost, setCurrentPost] = useState(post);
 
   // TODO: Add typing
-  const updateLikesInPost = (newLikes) => {
+  const updateLikesInPost = (newLikes: ILike[]) => {
     setCurrentPost((prevState) => ({ ...prevState, likes: newLikes }));
   };
 

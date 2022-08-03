@@ -7,6 +7,11 @@ export interface IComment {
   };
 }
 
+export interface ILike {
+  _ref: string;
+  _key: string;
+}
+
 export interface IPost {
   caption: string;
   video: {
@@ -21,10 +26,7 @@ export interface IPost {
     userName: string;
     image: string;
   };
-  likes: {
-    _ref: string;
-    _key: string;
-  }[];
+  likes: ILike[];
   comments: IComment[];
   userId: string;
 }
@@ -86,9 +88,6 @@ export interface INewPost {
     _type: string;
     _ref: string;
   };
-  likes: {
-    _ref: string;
-    _key: string;
-  }[];
+  likes: ILike[];
   comments: IComment[];
 }
