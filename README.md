@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <section align="center">
-  <a href="#">
+  <a href="https://tiktokclone-ts.vercel.app/">
     <img src="public/tiktok-logo.png" alt="Logo" width="150" height="50">
   </a>
 
@@ -29,7 +29,7 @@
     A simplified version of the popular <a href="https://www.tiktok.com/" target="_blank">TikTok social media application</a>
     <br>
     <br>
-    <a href="#">👉 View Demo 👈</a>
+    <a href="https://tiktokclone-ts.vercel.app/">👉 View Demo 👈</a>
   </article>
 </section>
 
